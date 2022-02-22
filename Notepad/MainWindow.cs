@@ -523,7 +523,7 @@ namespace TestForm
         private void ChangeWordWrap(object sender, EventArgs e)
         {
             textBox.WordWrap = !textBox.WordWrap;
-            WordWrapMenuItem.Checked = !WordWrapMenuItem.Checked;
+            wordWrapMenuItem.Checked = !wordWrapMenuItem.Checked;
         }
 
         /// <summary>
@@ -536,6 +536,19 @@ namespace TestForm
             if (fontDialog.ShowDialog() == DialogResult.OK)
             {
                 textBox.SelectionFont = fontDialog.Font;
+            }
+        }
+
+        /// <summary>
+        /// Обработка события нажатия Формат->Цвет...
+        /// </summary>
+        private void ChangeColor(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.Color = textBox.ForeColor;
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                textBox.SelectionColor = colorDialog.Color;
             }
         }
 
