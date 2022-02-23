@@ -398,7 +398,7 @@ namespace TestForm
         /// </summary>
         private void Paste(object sender, EventArgs e)
         {
-            textBox.Text += Clipboard.GetText();
+            textBox.Text = textBox.Text.Insert(textBox.SelectionStart, Clipboard.GetText());
         }
 
         /// <summary>
